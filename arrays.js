@@ -1,5 +1,8 @@
 const fruits = ["Apple", "Tamarind", "Banana"]
+
 console.log(fruits.length)
+
+
 console.log(fruits)
 //console.log(fruits.length)
 
@@ -41,3 +44,4 @@ console.log(allFruits[4])
 allFruits.pop()
 console.log(allFruits)
 //******everything i do should have a console.log******* 
+
