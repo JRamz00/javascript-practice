@@ -1,4 +1,4 @@
-var bmi = bmiCalculator(30,1.60)
+var bmi = bmiCalculator(99.8,1.88)
 var bmi2 = bmiCalculator(85,1.69)
 var bmi3 = bmiCalculator(60,1.60)
 //bmi = weight/height^2
