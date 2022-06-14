@@ -7,18 +7,26 @@
 //step 2 make a loop that loops through each number and determines if it
 
 
+const numbers = [3,44,12,44,13,44,21,38,33,33]
+console.log(numbers)
+console.log(numbers.length)
+var count = 0
+for(var i = 0; i <= numbers.length; i++){
+    console.log("Iteration",[i])
 
-
-function arbNumbers(num) {
-     var counter = 0
-    for (var i = 0; i < arbNumbers.length ; i++) {
-        console.log(arbNumbers.length)
-
-        
-        
-    }
-
+    
 }
 
+        
+        
 
+
+// 1 to 5
+// 1  2  3  4  5 
+// counters = [0, 0, 0, 0, 0]
+
+// x = [1, 2, 3, 2, 2, 2, 1]
+
+// for i in x:
+    // counters[i] += 1
 
