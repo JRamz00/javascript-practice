@@ -10,13 +10,16 @@
 const numbers = [3,44,12,44,13,44,21,38,33,33]
 console.log(numbers)
 console.log(numbers.length)
-var count = 0
+var count = newArray()
 for(var i = 0; i <= numbers.length; i++){
+    for(var x = 0; x <= numbers.length; x++)
     console.log("Iteration",[i])
-
+    console.log(numbers[i])
+    
+    
     
 }
-
+console.log(count)
         
         
 
