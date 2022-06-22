@@ -7,22 +7,24 @@
 //step 2 make a loop that loops through each number and determines if it
 
 
-const numbers = [3,44,12,44,13,44,21,38,33,33]
+const numbers = [3,44,12,44,13,44,21,38,33]
 console.log(numbers)
 console.log(numbers.length)
-var count = newArray()
+var count = 0
+var counter = new Array()
 for(var i = 0; i <= numbers.length; i++){
-    for(var x = 0; x <= numbers.length; x++)
     console.log("Iteration",[i])
     console.log(numbers[i])
-    
+    counter += ([i], count)
+
     
     
     
 }
 console.log(count)
         
-        
+      // I am missing something crucial, could be done with one loop, no function and no conditionals
+
 
 
 // 1 to 5
