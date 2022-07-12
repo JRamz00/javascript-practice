@@ -7,32 +7,28 @@
 //step 2 make a loop that loops through each number and determines if it
 
 
-const numbers = [3,44,12,44,13,44,21,38,33]
-console.log(numbers)
-console.log(numbers.length)
-var count = 0
-var counter = new Array()
-for(var i = 0; i <= numbers.length; i++){
-    console.log("Iteration",[i])
-    console.log(numbers[i])
-    counter += ([i], count)
-
-    
-    
+const numbers = [1,1,1,1,1,23,23,44,33,22,24,31,30,33,20,11,13,7,8,9,10,13,49,48,44,37]
+var count = Array(50)
+for(var i = 0; i < numbers.length; i++){
+    var numStorage = numbers[i]
+    if(count[numStorage] == undefined){
+        count[numStorage] = 1    
+    } else{
+        count[numStorage] += 1
+    }
     
 }
-console.log(count)
+for(var x = 0; x < count.length; x++){
+    if(count[x] != undefined){
+        console.log("The number of times ", x, "occurred is ",  count[x]) 
+    }
+    
+}
+
+    
+    
+    
+
         
-      // I am missing something crucial, could be done with one loop, no function and no conditionals
-
-
-
-// 1 to 5
-// 1  2  3  4  5 
-// counters = [0, 0, 0, 0, 0]
-
-// x = [1, 2, 3, 2, 2, 2, 1]
-
-// for i in x:
-    // counters[i] += 1
+      
 
