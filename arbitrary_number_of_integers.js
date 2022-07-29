@@ -7,7 +7,7 @@
 //step 2 make a loop that loops through each number and determines if it
 
 
-const numbers = [1,1,1,1,1,23,23,44,33,22,24,31,30,33,20,11,13,7,8,9,10,13,49,48,44,37]
+const numbers = [5,1,1,1,1,4,5,4,4]
 var count = Array(50)
 for(var i = 0; i < numbers.length; i++){
     var numStorage = numbers[i]
