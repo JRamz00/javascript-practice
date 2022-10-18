@@ -7,17 +7,13 @@
 
 
 
-fibonacciGenerator(6)
+fibonacciGenerator(50)
 
 function fibonacciGenerator(num){
     const fibonacciNums = [0,1]
-
-    for (var i = 0; i < num;  i++) {
-        console.log(num)
-        console.log(fibonacciNums[i])
-        console.log(fibonacciNums[i+1])
+    for (var i = 0; i < num-2;  i++) {
         var result = fibonacciNums[i] + fibonacciNums[i+1]
-        console.log(result)
-        
+        fibonacciNums.push(result)
     }
+    console.log(fibonacciNums)
 }
