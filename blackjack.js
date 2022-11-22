@@ -36,24 +36,38 @@ function shuffleDeck(deck){
     }
     return deck
 }
+function getHand(deck){
+    var firstCard = dealCard(deck)
+    console.log("First card ", firstCard.Card)
+    console.log("Deck after ", firstCard.Deck)
+    console.log("TEST ", deck)
+    var secondCard = dealCard(deck)
+    console.log("Second card ", secondCard.Card)
+    console.log("Deck after 2nd ", secondCard.Deck)
+}
+// Rename function to getHand, function will take in a shuffled deck, and then return a hand, 
+// which is 2 cards and the updated deck
+function getHands(deck){
+    const myCards = []
+    const dealerCards = []
+    for(var i = 0; i < 2; i++){
+        var myCard = dealCard(deck)
+        console.log("My card ", myCard)
+        var dealerCard = dealCard(deck)
+        console.log("Dealer hand ", dealerCard)
+        myCards.push(myCard)
+        console.log("Array ", myCards)
+        dealerCards.push(dealerCard)
+    }
+    console.log("deck after ", deck)
+    return [myCards, dealerCards, deck]
+}
 
-// function getHands(deck){
-//     const myCards = []
-//     const dealerCards = []
-//     for(var i = 0; i < 2; i++){
-//         var myCard = deck.shift()
-//         var dealerCard = deck.shift()
-//         myCards.push(myCard)
-//         dealerCards.push(dealerCard)
-//     }
-//     return [myCards, dealerCards]
-// }
-// 
-function dealCard(deck){
-    var card = deck.shift()
+function dealCard(deck1){
+    var card = deck1.shift()
     var results = {
         Card: card,
-        Deck: deck
+        Deck: deck1
     }
     return results
 }
@@ -70,9 +84,11 @@ console.log(deckOfCards)
 var shuffledDeck = shuffleDeck(deckOfCards)
 console.log(shuffledDeck)
 
-// var hands = getHands(shuffledDeck)
-// console.log("Hands ", hands)
+var hand = getHand(shuffledDeck)
+//var hands = getHands(shuffledDeck)
+ //console.log("Hands ", hands)
 
-var dealtCardAndDeck = dealCard(shuffledDeck)
-console.log("dealt card ", dealtCardAndDeck.Card)
-console.log("Deck after the card has been dealt ", dealtCardAndDeck.Deck)
+
+// var dealtCardAndDeck = dealCard(hands)
+// console.log("dealt card ", dealtCardAndDeck.Card)
+// console.log("Deck after the card has been dealt ", dealtCardAndDeck.Deck)
