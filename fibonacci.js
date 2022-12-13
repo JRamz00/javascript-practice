@@ -7,7 +7,7 @@
 
 
 
-fibonacciGenerator(100)
+fibonacciGenerator(10000)
 
 function fibonacciGenerator(num){
     const fibonacciNums = [0,1]

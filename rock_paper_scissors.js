@@ -17,7 +17,7 @@
 //Step 2: Make user variable, where I pass in rock paper or scissors
 //Step 3: Make a function on rock, paper, scissor, and which one wins over the other.
 
-rockPaperScissors("rock")
+rockPaperScissors("scissors")
 //rockPaperScissors("scissors")
 //rockPaperScissors("paper")
 //this function is going to take in my input and decide who wins between me and the computer.

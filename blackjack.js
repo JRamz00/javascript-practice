@@ -23,7 +23,7 @@ function makeDeck(){
             }
             cardArray.push(card)
         }     
-    }    
+    }  
     return cardArray
 }  
 
@@ -40,28 +40,86 @@ function getHand(deck){
     var firstCard = dealCard(deck)
     console.log("First card ", firstCard.Card)
     console.log("Deck after ", firstCard.Deck)
-    console.log("TEST ", deck)
     var secondCard = dealCard(deck)
     console.log("Second card ", secondCard.Card)
     console.log("Deck after 2nd ", secondCard.Deck)
+    return [firstCard.Card, secondCard.Card]
 }
 // Rename function to getHand, function will take in a shuffled deck, and then return a hand, 
 // which is 2 cards and the updated deck
 function getHands(deck){
-    const myCards = []
-    const dealerCards = []
-    for(var i = 0; i < 2; i++){
-        var myCard = dealCard(deck)
-        console.log("My card ", myCard)
-        var dealerCard = dealCard(deck)
-        console.log("Dealer hand ", dealerCard)
-        myCards.push(myCard)
-        console.log("Array ", myCards)
-        dealerCards.push(dealerCard)
-    }
-    console.log("deck after ", deck)
-    return [myCards, dealerCards, deck]
+    var myHand = getHand(deck)
+    console.log("My Cards are ", myHand)
+    console.log("Remaining in the deck ", deck)
+    var computerHand = getHand(deck)
+    console.log("Computer's cards are ", computerHand)
+    return [myHand, computerHand, deck]
 }
+
+function sumOfHands(deck){
+    var player1 = deck[0]
+    console.log("****************************")
+    console.log("Deck Object ", deck)
+    console.log("****************************")
+    console.log("Player 1 has ",player1)
+    var cpu = deck[1]
+    console.log("computer has ",cpu)
+    var mySum = cardSum(player1[0].Value)
+    var mySum2 = cardSum(player1[1].Value)
+    var dealer = cardSum(cpu[0].Value)
+    var dealer2 = cardSum(cpu[1].Value)
+    
+    var player1CardSum = mySum + mySum2
+    var dealerSum = dealer + dealer2
+    console.log("You have a total of " ,player1CardSum)
+    console.log("Dealer has a total of " ,dealerSum)
+    return [player1CardSum, dealerSum, deck[2]]
+    // if(dealerSum < "16"){
+    //     dealCard(deck[2])
+    // }
+    // else if(dealerSum > 17){
+    //     return dealerSum
+    // }
+    // console.log(dealerSum)
+    // console.log("TESTING",player1[0].Value)
+    // var player1CardSum = +player1[0].Value + +player1[1].Value
+    // console.log("***TEST***", player1CardSum)
+    
+}
+//change to cardValue
+function cardSum(value){
+//Clean this up  
+    console.log("This card's value is ",value)
+    // if(value === "J"){
+    //     return 10
+    // }
+    // else if(value === "Q"){
+    //     return 10
+    // }
+    // else if(value === "K"){
+    //     return 10
+    // }
+    if(value === "J"||value === "Q"||value === "K"){
+        return 10
+    }
+    else if(value === "A"){
+        return 1
+    }
+    else{
+        return parseInt(value)
+    }
+}
+//this function passes the values from sumCards which is the player sum, dealer sum and the deck. 
+//Need to figure out how to deal the card and also shave down the deck.
+function blackJack(hands){
+    console.log("BLACKJACK", hands)
+    if(hands[1] < "16"){
+        return dealCard(hands[2])
+    }
+}
+    
+//fix function names like blackJack and cardSum
+// we need to fix the function so that it can keep replenishing the dealers hand until the deal meets 16 cards    
 
 function dealCard(deck1){
     var card = deck1.shift()
@@ -84,7 +142,17 @@ console.log(deckOfCards)
 var shuffledDeck = shuffleDeck(deckOfCards)
 console.log(shuffledDeck)
 
-var hand = getHand(shuffledDeck)
+var hands = getHands(shuffledDeck)
+console.log(hands)
+
+var sumCards = sumOfHands(hands)
+console.log("You have", sumCards[0], "Dealer has", sumCards[1])
+
+var gameTime = blackJack(sumCards)
+console.log("After BLACKJACK", gameTime)
+
+ 
+
 //var hands = getHands(shuffledDeck)
  //console.log("Hands ", hands)
 
